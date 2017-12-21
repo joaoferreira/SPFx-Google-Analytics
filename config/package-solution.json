@@ -1,0 +1,13 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "analytics-client-side-solution",
+    "id": "1a956dc0-ccb1-4a05-8dd1-0eda27d2d7e0",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },  
+  "paths": {
+    "zippedPackage": "solution/analytics.sppkg"
+  }
+}
