@@ -9,8 +9,8 @@ import * as strings from 'AnalyticsApplicationCustomizerStrings';
 
 const LOG_SOURCE: string = 'AnalyticsApplicationCustomizer';
 
-var currentURL:string = document.location.href;
-var previousURL:string = "";
+var currentURL: string = document.location.href;
+var previousURL: string = "";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -25,34 +25,74 @@ export interface IAnalyticsApplicationCustomizerProperties {
 export default class AnalyticsApplicationCustomizer
   extends BaseApplicationCustomizer<IAnalyticsApplicationCustomizerProperties> {
 
+  private currentPage = "";
+  private isInitialLoad = true;
+
+  private getFreshCurrentPage(): string {
+    return window.location.pathname + window.location.search;
+  }
+
+  private updateCurrentPage(): void {
+    this.currentPage = this.getFreshCurrentPage();
+  }
+
+  private navigatedEvent(): void {
+
+    let trackingID: string = this.properties.trackingID;
+    if (!trackingID) {
+      Log.info(LOG_SOURCE, `${strings.MissingID}`);
+    } else {
+
+      const navigatedPage = this.getFreshCurrentPage();
+
+      if (this.isInitialLoad) {
+        this.realInitialNavigatedEvent(trackingID);
+        this.updateCurrentPage();
+        this.isInitialLoad = false;
+
+      }
+      else if (!this.isInitialLoad && (navigatedPage !== this.currentPage)) {
+        this.realNavigatedEvent(trackingID);
+        this.updateCurrentPage();
+      }
+    }
+  }
+
+  private realInitialNavigatedEvent(trackingID: string): void {
+
+    console.log("Tracking full page load...");
+
+    var gtagScript = document.createElement("script");
+    gtagScript.type = "text/javascript";
+    gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;
+    gtagScript.async = true;
+    document.head.appendChild(gtagScript);
+
+    eval(`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config',  '${trackingID}');
+        `);
+  }
+
+  private realNavigatedEvent(trackingID: string): void {
+
+    console.log("Tracking partial page load...");
+
+    eval(`
+        if(ga) {
+          ga('create', '${trackingID}', 'auto');
+          ga('set', 'page', '${this.getFreshCurrentPage()}');
+          ga('send', 'pageview');
+        }
+        `);
+  }
+
   @override
   public onInit(): Promise<void> {
 
-    this.context.application.navigatedEvent.add(this, () => {
-      if(document.location.href!=previousURL){
-        currentURL = document.location.href;
-        previousURL = document.location.href;
-        let trackingID: string = this.properties.trackingID;
-        if (!trackingID) {
-          Log.info(LOG_SOURCE, `${strings.MissingID}`);
-        }else{
-          var gtagScript = document.createElement("script");
-          gtagScript.type = "text/javascript";
-          gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;    
-          gtagScript.async = true;
-          document.head.appendChild(gtagScript);  
-    
-          eval(`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());    
-            gtag('config',  '${trackingID}');
-          `);
-        }
-      }
-    });  
-    
-    
+    this.context.application.navigatedEvent.add(this, this.navigatedEvent);
 
     return Promise.resolve();
   }
