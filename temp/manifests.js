@@ -112,30 +112,10 @@ exports.getLocalPageManifests = getLocalPageManifests;
 function getManifests() {
     return [
   {
-    "id": "f97266fb-ccb7-430e-9384-4124d05295d3",
-    "alias": "Decorators",
-    "componentType": "Library",
-    "version": "1.4.0",
-    "manifestVersion": 2,
-    "loaderConfig": {
-      "entryModuleId": "decorators",
-      "internalModuleBaseUrls": [
-        "https://localhost:4321/node_modules/@microsoft/decorators/"
-      ],
-      "scriptResources": {
-        "decorators": {
-          "type": "path",
-          "path": "dist/decorators.js"
-        }
-      }
-    },
-    "isInternal": true
-  },
-  {
     "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a",
     "alias": "SPLodashSubset",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-lodash-subset",
@@ -155,7 +135,7 @@ function getManifests() {
     "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b",
     "alias": "SPCoreLibrary",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-core-library",
@@ -169,8 +149,28 @@ function getManifests() {
         },
         "@microsoft/sp-lodash-subset": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+        }
+      }
+    },
+    "isInternal": true
+  },
+  {
+    "id": "f97266fb-ccb7-430e-9384-4124d05295d3",
+    "alias": "Decorators",
+    "componentType": "Library",
+    "version": "1.7.1",
+    "manifestVersion": 2,
+    "loaderConfig": {
+      "entryModuleId": "decorators",
+      "internalModuleBaseUrls": [
+        "https://localhost:4321/node_modules/@microsoft/decorators/"
+      ],
+      "scriptResources": {
+        "decorators": {
+          "type": "path",
+          "path": "dist/decorators.js"
         }
       }
     },
@@ -180,7 +180,7 @@ function getManifests() {
     "id": "02a01e42-69ab-403d-8a16-acd128661f8e",
     "alias": "OfficeUIFabricReact",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "office-ui-fabric-react-bundle",
@@ -194,15 +194,85 @@ function getManifests() {
         },
         "react": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
           "failoverPath": "node_modules/react/dist/react.js"
         },
+        "@microsoft/load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
+        },
         "react-dom": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
           "failoverPath": "node_modules/react-dom/dist/react-dom.js"
+        }
+      }
+    },
+    "isInternal": true
+  },
+  {
+    "manifestVersion": 2,
+    "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8",
+    "alias": "SPDiagnostics",
+    "componentType": "Library",
+    "version": "1.7.1",
+    "loaderConfig": {
+      "entryModuleId": "sp-diagnostics",
+      "internalModuleBaseUrls": [
+        "https://localhost:4321/node_modules/@microsoft/sp-diagnostics/"
+      ],
+      "scriptResources": {
+        "sp-diagnostics": {
+          "type": "path",
+          "path": "dist/sp-diagnostics.js"
+        },
+        "@microsoft/sp-core-library": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+        },
+        "@microsoft/sp-lodash-subset": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+        }
+      }
+    },
+    "isInternal": true
+  },
+  {
+    "manifestVersion": 2,
+    "id": "e40f8203-b39d-425a-a957-714852e33b79",
+    "alias": "SPDynamicData",
+    "componentType": "Library",
+    "version": "1.7.1",
+    "loaderConfig": {
+      "entryModuleId": "sp-dynamic-data",
+      "internalModuleBaseUrls": [
+        "https://localhost:4321/node_modules/@microsoft/sp-dynamic-data/"
+      ],
+      "scriptResources": {
+        "sp-dynamic-data": {
+          "type": "localizedPath",
+          "defaultPath": "dist/sp-dynamic-data_en-us.js"
+        },
+        "@microsoft/sp-core-library": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        },
+        "@microsoft/sp-lodash-subset": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
         }
       }
     },
@@ -212,7 +282,7 @@ function getManifests() {
     "id": "1e384972-6346-49b4-93c7-b2e6763938e6",
     "alias": "sp-polyfills",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-polyfills",
@@ -228,10 +298,78 @@ function getManifests() {
     }
   },
   {
+    "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6",
+    "alias": "SPHttp",
+    "componentType": "Library",
+    "version": "1.7.1",
+    "manifestVersion": 2,
+    "preloadComponents": [
+      "4d5eb168-6729-49a8-aec7-0e397f486b6e"
+    ],
+    "loaderConfig": {
+      "entryModuleId": "sp-http",
+      "internalModuleBaseUrls": [
+        "https://localhost:4321/node_modules/@microsoft/sp-http/"
+      ],
+      "scriptResources": {
+        "sp-http": {
+          "type": "localizedPath",
+          "defaultPath": "dist/sp-http_en-us.js"
+        },
+        "@microsoft/sp-core-library": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        }
+      }
+    },
+    "isInternal": true
+  },
+  {
+    "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8",
+    "alias": "SPPageContext",
+    "componentType": "Library",
+    "version": "1.7.1",
+    "manifestVersion": 2,
+    "loaderConfig": {
+      "entryModuleId": "sp-page-context",
+      "internalModuleBaseUrls": [
+        "https://localhost:4321/node_modules/@microsoft/sp-page-context/"
+      ],
+      "scriptResources": {
+        "sp-page-context": {
+          "type": "localizedPath",
+          "defaultPath": "dist/sp-page-context_en-us.js"
+        },
+        "@microsoft/sp-core-library": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        },
+        "@microsoft/sp-dynamic-data": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "e40f8203-b39d-425a-a957-714852e33b79"
+        }
+      }
+    },
+    "isInternal": true
+  },
+  {
     "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f",
     "alias": "SPLoader",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-loader",
@@ -245,93 +383,43 @@ function getManifests() {
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
-        "@ms/sp-telemetry": {
+        "@microsoft/sp-diagnostics": {
           "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
         },
         "@microsoft/sp-lodash-subset": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
-        }
-      }
-    },
-    "isInternal": true
-  },
-  {
-    "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6",
-    "alias": "SPHttp",
-    "componentType": "Library",
-    "version": "1.4.0",
-    "manifestVersion": 2,
-    "loaderConfig": {
-      "entryModuleId": "sp-http",
-      "internalModuleBaseUrls": [
-        "https://localhost:4321/node_modules/@microsoft/sp-http/"
-      ],
-      "scriptResources": {
-        "sp-http": {
-          "type": "path",
-          "path": "dist/sp-http.js"
         },
-        "@microsoft/sp-core-library": {
+        "@microsoft/sp-page-context": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
-        },
-        "@microsoft/decorators": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
-        },
-        "@ms/sp-telemetry": {
-          "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
-        },
-        "@microsoft/sp-lodash-subset": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
-        }
-      }
-    },
-    "isInternal": true
-  },
-  {
-    "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8",
-    "alias": "SPPageContext",
-    "componentType": "Library",
-    "version": "1.4.0",
-    "manifestVersion": 2,
-    "loaderConfig": {
-      "entryModuleId": "sp-page-context",
-      "internalModuleBaseUrls": [
-        "https://localhost:4321/node_modules/@microsoft/sp-page-context/"
-      ],
-      "scriptResources": {
-        "sp-page-context": {
-          "type": "path",
-          "path": "dist/sp-page-context.js"
-        },
-        "@microsoft/sp-core-library": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
-        },
-        "@ms/sp-telemetry": {
-          "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
+          "version": "1.7.1",
+          "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
         },
         "@microsoft/sp-http": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
+        },
+        "@ms/sp-telemetry": {
+          "type": "component",
+          "version": "0.2.2",
+          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
+        },
+        "@microsoft/sp-dynamic-data": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "e40f8203-b39d-425a-a957-714852e33b79"
+        },
+        "@microsoft/load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         }
       }
     },
@@ -341,7 +429,7 @@ function getManifests() {
     "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6",
     "alias": "SPComponentBase",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-component-base",
@@ -350,28 +438,48 @@ function getManifests() {
       ],
       "scriptResources": {
         "sp-component-base": {
-          "type": "path",
-          "path": "dist/sp-component-base.js"
-        },
-        "@microsoft/decorators": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
+          "type": "localizedPath",
+          "defaultPath": "dist/sp-component-base_en-us.js"
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
-        "@ms/sp-telemetry": {
+        "@microsoft/sp-lodash-subset": {
           "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
+          "version": "1.7.1",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        },
+        "@microsoft/sp-dynamic-data": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "e40f8203-b39d-425a-a957-714852e33b79"
+        },
+        "@microsoft/decorators": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
         },
         "@microsoft/sp-page-context": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
+        },
+        "@microsoft/sp-http": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
+        },
+        "@microsoft/load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         }
       }
     },
@@ -381,7 +489,7 @@ function getManifests() {
     "id": "0773bd53-a69e-4293-87e6-ba80ea4d614b",
     "alias": "SPExtensionBase",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-extension-base",
@@ -393,34 +501,34 @@ function getManifests() {
           "type": "localizedPath",
           "defaultPath": "dist/sp-extension-base_en-us.js"
         },
+        "@microsoft/sp-component-base": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6"
+        },
         "@ms/sp-telemetry": {
           "type": "component",
           "version": "0.2.2",
           "id": "8217e442-8ed3-41fd-957d-b112e841286a"
         },
-        "@microsoft/sp-component-base": {
+        "@microsoft/sp-diagnostics": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6"
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
         },
         "@microsoft/decorators": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
-        },
-        "@microsoft/sp-http": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@microsoft/sp-loader": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f"
         }
       }
@@ -431,8 +539,12 @@ function getManifests() {
     "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb",
     "alias": "SPApplicationBase",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
+    "preloadComponents": [
+      "c0c518b8-701b-4f6f-956d-5782772bb731",
+      "02a01e42-69ab-403d-8a16-acd128661f8e"
+    ],
     "loaderConfig": {
       "entryModuleId": "sp-application-base",
       "internalModuleBaseUrls": [
@@ -445,48 +557,63 @@ function getManifests() {
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        },
+        "@microsoft/sp-loader": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f"
+        },
+        "@microsoft/sp-http": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
+        },
+        "@microsoft/decorators": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
+        },
+        "@microsoft/sp-extension-base": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "0773bd53-a69e-4293-87e6-ba80ea4d614b"
+        },
+        "@microsoft/sp-page-context": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
         },
         "@ms/sp-telemetry": {
           "type": "component",
           "version": "0.2.2",
           "id": "8217e442-8ed3-41fd-957d-b112e841286a"
         },
-        "@microsoft/sp-http": {
+        "@microsoft/sp-lodash-subset": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
-        },
-        "@microsoft/sp-loader": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f"
-        },
-        "@microsoft/sp-page-context": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
-        },
-        "@microsoft/sp-extension-base": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "0773bd53-a69e-4293-87e6-ba80ea4d614b"
+          "version": "1.7.1",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
         },
         "@microsoft/sp-component-base": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6"
         },
-        "@microsoft/decorators": {
+        "@microsoft/load-themed-styles": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         },
-        "@microsoft/sp-lodash-subset": {
+        "@ms/sp-load-themed-styles": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         }
       }
     },
@@ -496,7 +623,7 @@ function getManifests() {
     "id": "974a7777-0990-4136-8fa6-95d80114c2e0",
     "alias": "SPWebPartBase",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-webpart-base",
@@ -510,65 +637,75 @@ function getManifests() {
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@microsoft/decorators": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
+        },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
         },
         "react": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
           "failoverPath": "node_modules/react/dist/react.js"
+        },
+        "@microsoft/sp-lodash-subset": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+        },
+        "@microsoft/load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         },
         "@ms/sp-telemetry": {
           "type": "component",
           "version": "0.2.2",
           "id": "8217e442-8ed3-41fd-957d-b112e841286a"
         },
-        "@microsoft/sp-lodash-subset": {
+        "@microsoft/office-ui-fabric-react-bundle": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
-        },
-        "office-ui-fabric-react": {
-          "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
-        },
-        "react-dom": {
-          "type": "component",
-          "version": "15.6.2",
-          "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
-          "failoverPath": "node_modules/react-dom/dist/react-dom.js"
-        },
-        "@microsoft/sp-http": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         },
         "@microsoft/sp-component-base": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6"
+        },
+        "react-dom": {
+          "type": "component",
+          "version": "16.3.2",
+          "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
+          "failoverPath": "node_modules/react-dom/dist/react-dom.js"
+        },
+        "@ms/sp-load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         },
         "@microsoft/sp-loader": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f"
+        },
+        "@microsoft/sp-http": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         },
         "@microsoft/sp-page-context": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
-        },
-        "@microsoft/office-ui-fabric-react-bundle": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
         }
       }
     },
@@ -578,7 +715,7 @@ function getManifests() {
     "id": "c0c518b8-701b-4f6f-956d-5782772bb731",
     "alias": "SPDialog",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-dialog",
@@ -590,52 +727,52 @@ function getManifests() {
           "type": "path",
           "path": "dist/sp-dialog.js"
         },
+        "@microsoft/office-ui-fabric-react-bundle": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
+        },
         "react": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
           "failoverPath": "node_modules/react/dist/react.js"
         },
         "react-dom": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
           "failoverPath": "node_modules/react-dom/dist/react-dom.js"
         },
-        "office-ui-fabric-react": {
+        "@microsoft/sp-diagnostics": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
         },
         "@microsoft/decorators": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
-        },
-        "@ms/sp-telemetry": {
-          "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
-        },
-        "@microsoft/sp-core-library": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@microsoft/sp-application-base": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb"
         },
-        "@microsoft/office-ui-fabric-react-bundle": {
+        "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
+          "version": "1.7.1",
+          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@microsoft/sp-webpart-base": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "974a7777-0990-4136-8fa6-95d80114c2e0"
+        },
+        "@microsoft/load-themed-styles": {
+          "type": "component",
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         }
       }
     },
@@ -645,7 +782,7 @@ function getManifests() {
     "id": "4d5eb168-6729-49a8-aec7-0e397f486b6e",
     "alias": "SPClientPreview",
     "componentType": "Library",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "loaderConfig": {
       "entryModuleId": "sp-client-preview",
@@ -656,26 +793,6 @@ function getManifests() {
         "sp-client-preview": {
           "type": "path",
           "path": "dist/sp-client-preview.js"
-        },
-        "@microsoft/sp-core-library": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
-        },
-        "@microsoft/sp-lodash-subset": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
-        },
-        "@ms/sp-telemetry": {
-          "type": "component",
-          "version": "0.2.2",
-          "id": "8217e442-8ed3-41fd-957d-b112e841286a"
-        },
-        "@microsoft/sp-http": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         }
       }
     },
@@ -685,7 +802,7 @@ function getManifests() {
     "id": "8be81a5c-af38-4bb2-af97-afa3b64dfbed",
     "alias": "WebPartWorkbench",
     "componentType": "Application",
-    "version": "1.4.0",
+    "version": "1.7.1",
     "manifestVersion": 2,
     "title": {
       "default": "WebpartWorkbench"
@@ -694,11 +811,7 @@ function getManifests() {
       "default": "WebpartWorkbench"
     },
     "assemblyId": "5dae53c4-db1e-4d0b-b8b2-88c874dabf83",
-    "preloadComponents": [
-      "8217e442-8ed3-41fd-957d-b112e841286a",
-      "4df9bb86-ab0a-4aab-ab5f-48bf167048fb",
-      "05ed6956-59ad-4aa6-9e4e-b832c96ae87b"
-    ],
+    "preloadComponents": [],
     "preloadOptions": {
       "shouldPreloadWeb": true,
       "shouldPreloadUser": true,
@@ -716,20 +829,25 @@ function getManifests() {
           "type": "localizedPath",
           "defaultPath": "dist/sp-webpart-workbench_en-us.js"
         },
+        "@microsoft/office-ui-fabric-react-bundle": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
+        },
         "react": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
           "failoverPath": "node_modules/react/dist/react.js"
         },
-        "office-ui-fabric-react": {
+        "@microsoft/load-themed-styles": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
+          "version": "0.1.2",
+          "id": "229b8d08-79f3-438b-8c21-4613fc877abd"
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@ms/sp-telemetry": {
@@ -737,87 +855,92 @@ function getManifests() {
           "version": "0.2.2",
           "id": "8217e442-8ed3-41fd-957d-b112e841286a"
         },
+        "@microsoft/sp-diagnostics": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "78359e4b-07c2-43c6-8d0b-d060b4d577e8"
+        },
         "@microsoft/sp-lodash-subset": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
-        },
-        "@microsoft/sp-webpart-base": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "974a7777-0990-4136-8fa6-95d80114c2e0"
         },
         "react-dom": {
           "type": "component",
-          "version": "15.6.2",
+          "version": "16.3.2",
           "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
           "failoverPath": "node_modules/react-dom/dist/react-dom.js"
         },
-        "@microsoft/office-ui-fabric-react-bundle": {
+        "@microsoft/sp-webpart-base": {
           "type": "component",
-          "version": "1.4.0",
-          "id": "02a01e42-69ab-403d-8a16-acd128661f8e"
-        },
-        "@microsoft/sp-page-context": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
-        },
-        "@microsoft/sp-http": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
-        },
-        "@microsoft/sp-application-base": {
-          "type": "component",
-          "version": "1.4.0",
-          "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb"
+          "version": "1.7.1",
+          "id": "974a7777-0990-4136-8fa6-95d80114c2e0"
         },
         "@microsoft/sp-loader": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "1c6c9123-7aac-41f3-a376-3caea41ed83f"
+        },
+        "@microsoft/sp-page-context": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "1c4541f7-5c31-41aa-9fa8-fbc9dc14c0a8"
+        },
+        "@microsoft/sp-application-base": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb"
+        },
+        "@microsoft/sp-component-base": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "467dc675-7cc5-4709-8aac-78e3b71bd2f6"
+        },
+        "@microsoft/sp-http": {
+          "type": "component",
+          "version": "1.7.1",
+          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         }
       }
     },
     "isInternal": true
   },
   {
-    "id": "9811e000-540c-479c-8436-1cb4c4fd0484",
-    "alias": "AnalyticsApplicationCustomizer",
+    "id": "0b6313bf-13c8-4ed3-955b-8a0bedd8e806",
+    "alias": "GoogleAnalyticsApplicationCustomizer",
     "componentType": "Extension",
     "extensionType": "ApplicationCustomizer",
     "version": "0.0.1",
     "manifestVersion": 2,
     "requiresCustomScript": false,
     "loaderConfig": {
-      "entryModuleId": "analytics-application-customizer",
+      "entryModuleId": "google-analytics-application-customizer",
       "internalModuleBaseUrls": [
         "https://localhost:4321/"
       ],
       "scriptResources": {
-        "analytics-application-customizer": {
+        "google-analytics-application-customizer": {
           "type": "path",
-          "path": "dist/analytics-application-customizer.js"
+          "path": "dist/google-analytics-application-customizer.js"
         },
-        "AnalyticsApplicationCustomizerStrings": {
-          "defaultPath": "lib/extensions/analytics/loc/en-us.js",
+        "GoogleAnalyticsApplicationCustomizerStrings": {
+          "defaultPath": "lib/extensions/googleAnalytics/loc/en-us.js",
           "type": "localizedPath",
           "paths": {}
         },
         "@microsoft/decorators": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "f97266fb-ccb7-430e-9384-4124d05295d3"
         },
         "@microsoft/sp-core-library": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
         },
         "@microsoft/sp-application-base": {
           "type": "component",
-          "version": "1.4.0",
+          "version": "1.7.1",
           "id": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb"
         }
       }
@@ -826,9 +949,7 @@ function getManifests() {
 ];
 }
 exports.getManifests = getManifests;
-
 //# sourceMappingURL=manifestsFile.js.map
-
 
 /***/ }),
 /* 1 */

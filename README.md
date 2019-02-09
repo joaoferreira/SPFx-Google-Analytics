@@ -1,4 +1,4 @@
-## analytics
+## google-analytics
 
 This is where you include your WebPart documentation.
 
