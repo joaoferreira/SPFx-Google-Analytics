@@ -4,6 +4,6 @@
         Title="GoogleAnalytics"
         Location="ClientSideExtension.ApplicationCustomizer"
         ComponentId="0b6313bf-13c8-4ed3-955b-8a0bedd8e806"
-        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+        Properties="{&quot;trackingID&quot;:&quot;UA-00000000-1&quot;}">
     </ClientSideComponentInstance>
 </Elements>
