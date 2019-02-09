@@ -9,7 +9,7 @@
         "0b6313bf-13c8-4ed3-955b-8a0bedd8e806": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "trackingID": "UA-00000000-1"
           }
         }
       }
@@ -20,7 +20,7 @@
         "0b6313bf-13c8-4ed3-955b-8a0bedd8e806": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "trackingID": "UA-00000000-1"
           }
         }
       }
