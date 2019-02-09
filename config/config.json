@@ -1,18 +1,18 @@
 {
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "analytics-application-customizer": {
+    "google-analytics-application-customizer": {
       "components": [
         {
-          "entrypoint": "./lib/extensions/analytics/AnalyticsApplicationCustomizer.js",
-          "manifest": "./src/extensions/analytics/AnalyticsApplicationCustomizer.manifest.json"
+          "entrypoint": "./lib/extensions/googleAnalytics/GoogleAnalyticsApplicationCustomizer.js",
+          "manifest": "./src/extensions/googleAnalytics/GoogleAnalyticsApplicationCustomizer.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "AnalyticsApplicationCustomizerStrings": "lib/extensions/analytics/loc/{locale}.js"
+    "GoogleAnalyticsApplicationCustomizerStrings": "lib/extensions/googleAnalytics/loc/{locale}.js"
   }
 }
