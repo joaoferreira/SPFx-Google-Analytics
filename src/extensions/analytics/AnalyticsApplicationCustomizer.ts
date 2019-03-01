@@ -3,14 +3,10 @@ import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer
 } from '@microsoft/sp-application-base';
-import { Dialog } from '@microsoft/sp-dialog';
 
 import * as strings from 'AnalyticsApplicationCustomizerStrings';
 
 const LOG_SOURCE: string = 'AnalyticsApplicationCustomizer';
-
-var currentURL: string = document.location.href;
-var previousURL: string = "";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
@@ -25,16 +21,12 @@ export interface IAnalyticsApplicationCustomizerProperties {
 export default class AnalyticsApplicationCustomizer
   extends BaseApplicationCustomizer<IAnalyticsApplicationCustomizerProperties> {
 
-  private currentPage = "";
   private isInitialLoad = true;
 
   private getFreshCurrentPage(): string {
     return window.location.pathname + window.location.search;
   }
 
-  private updateCurrentPage(): void {
-    this.currentPage = this.getFreshCurrentPage();
-  }
 
   private navigatedEvent(): void {
 
@@ -43,22 +35,18 @@ export default class AnalyticsApplicationCustomizer
       Log.info(LOG_SOURCE, `${strings.MissingID}`);
     } else {
 
-      const navigatedPage = this.getFreshCurrentPage();
-
       if (this.isInitialLoad) {
-        this.realInitialNavigatedEvent(trackingID);
-        this.updateCurrentPage();
+        this.initialNavigatedEvent(trackingID);
         this.isInitialLoad = false;
 
       }
-      else if (!this.isInitialLoad && (navigatedPage !== this.currentPage)) {
-        this.realNavigatedEvent(trackingID);
-        this.updateCurrentPage();
+      else {
+        this.partialNavigatedEvent(trackingID);
       }
     }
   }
 
-  private realInitialNavigatedEvent(trackingID: string): void {
+  private initialNavigatedEvent(trackingID: string): void {
 
     console.log("Tracking full page load...");
 
@@ -76,7 +64,7 @@ export default class AnalyticsApplicationCustomizer
         `);
   }
 
-  private realNavigatedEvent(trackingID: string): void {
+  private partialNavigatedEvent(trackingID: string): void {
 
     console.log("Tracking partial page load...");
 
