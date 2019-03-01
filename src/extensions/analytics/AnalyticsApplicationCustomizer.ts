@@ -3,7 +3,6 @@ import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer
 } from '@microsoft/sp-application-base';
-import { Dialog } from '@microsoft/sp-dialog';
 
 import * as strings from 'AnalyticsApplicationCustomizerStrings';
 
@@ -22,7 +21,6 @@ export interface IAnalyticsApplicationCustomizerProperties {
 export default class AnalyticsApplicationCustomizer
   extends BaseApplicationCustomizer<IAnalyticsApplicationCustomizerProperties> {
 
-  private currentPage = "";
   private isInitialLoad = true;
 
   private getFreshCurrentPage(): string {
